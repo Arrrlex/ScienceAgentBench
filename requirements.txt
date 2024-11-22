@@ -1,7 +1,6 @@
 backoff
 code_bert_score
 litellm
-lightllm
 openai
 pydantic
 tiktoken
@@ -16,5 +15,4 @@ rasterio
 scikit_learn
 scipy
 torch
-lightllm
 datasets
