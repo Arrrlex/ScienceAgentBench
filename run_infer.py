@@ -48,7 +48,9 @@ def main(args):
         with open(args.log_fname, "r", encoding="utf-8") as log_f:
             solved = len([l for l in log_f])
 
-    row_ids = [i for i in range(len(dataset_hf))][: args.num_samples]
+    row_ids = [i for i in range(len(dataset_hf))]
+    if args.num_samples is not None:
+        row_ids = row_ids[: args.num_samples]
 
     for index in tqdm(row_ids):
         if index >= solved:
@@ -99,7 +101,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--num_samples",
         type=int,
-        default=5,
+        default=None,
     )
 
     args = parser.parse_args()
